@@ -1,7 +1,12 @@
-import { GET_CHARACTER, GET_CHARACTERS } from "./actions";
+import { GET_CHARACTER, GET_CHARACTERS, GET_PAGE } from "./actions";
 
 const initialState = {
   allCharacters: [],
+  actualPage: "https://rickandmortyapi.com/api/character",
+  onNextPage: "",
+  onPreviousPage: "",
+  isLoading: true,
+  page: 1,
   character: {},
 };
 
@@ -10,12 +15,20 @@ const rootReducer = (state = initialState, action) => {
     case GET_CHARACTERS:
       return {
         ...state,
-        allCharacters: action.payload.results
+        allCharacters: action.payload.results,
+        isLoading: false,
       };
     case GET_CHARACTER:
       return {
         ...state,
         character: action.payload,
+        isLoading: false,
+      };
+    case GET_PAGE:
+      return {
+        ...state,
+        onNextPage: action.payload.info.next,
+        onPreviousPage: action.payload.info.prev,
       };
     default:
       return state;

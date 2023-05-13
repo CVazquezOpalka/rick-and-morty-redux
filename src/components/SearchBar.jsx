@@ -36,6 +36,7 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 10px;
     svg{
       font-size: 30px;
       color: rgb(32, 233, 5);

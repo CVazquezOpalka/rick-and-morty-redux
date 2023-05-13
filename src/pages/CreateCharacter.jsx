@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Banner = () =>{
+export const CreateCharacter = () =>{
 return (
       <Container>
-          <h1>CBanner</h1>
+          <h1>CCreateCharacter</h1>
       </Container>
 );
 }

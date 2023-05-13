@@ -65,12 +65,11 @@ const Container = styled.header`
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 10px;
         list-style: none;
         margin-right: 30px;
         li {
           font-size: 1.1rem;
-          font-weight: 500;
+          font-weight: 600;
           letter-spacing: 1px;
           a {
             display: block;
@@ -79,8 +78,8 @@ const Container = styled.header`
             transition: 0.5s;
             &:hover {
               padding: 5px 10px;
-              border: 1px solid rgb(32, 233, 5);
-              border-radius: 10px;
+              border-bottom: 1px solid rgb(32, 233, 5);
+              
             }
           }
         }
@@ -90,7 +89,7 @@ const Container = styled.header`
   .buttonbar {
     margin: 10px 0;
     border: 1px solid rgb(32, 233, 5);
-    width: 1000px;
+    width: 350px;
     height: 40px;
     border-radius: 35px;
   }
