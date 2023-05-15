@@ -3,19 +3,20 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getCharacter } from "../redux/actions";
+import { Loading } from "../components/Loading";
 
 export const Character = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.character);
-  const loading = useSelector((state)=> state.isLoading);
+  const loading = useSelector((state) => state.isLoading);
   const { id } = useParams();
   useEffect(() => {
     dispatch(getCharacter(id));
   }, []);
   return (
     <>
-      {loading ? (
-        <h1>Cargando perro!</h1>
+     {loading ? (
+        <Loading/>
       ) : (
         <Container>
           <div className="topcard">
@@ -37,11 +38,13 @@ export const Character = () => {
 };
 
 const Container = styled.div`
-  width: 100vw;
+  width: 90vw;
   height: 500px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border: 1px solid green;
+  margin: 10px auto;
   .topcard {
     width: 50%;
     height: 100%;

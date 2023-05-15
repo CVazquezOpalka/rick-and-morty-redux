@@ -3,22 +3,28 @@ import styled from "styled-components";
 import { Card } from "./Card";
 import { connect, useSelector } from "react-redux";
 import { getCharacters } from "../redux/actions";
+import { Loading } from "./Loading";
 
 const CardContext = ({ character }) => {
+  const loading = useSelector((state) => state.loading);
   useEffect(() => {
     getCharacters();
   }, []);
   return (
     <Container>
-      {character?.map((e) => (
-        <Card
-          key={e.id}
-          id={e.id}
-          name={e.name}
-          image={e.image}
-          status={e.status}
-        />
-      ))}
+      {loading ? (
+        <Loading />
+      ) : (
+        character.map((e) => (
+          <Card
+            key={e.id}
+            id={e.id}
+            name={e.name}
+            image={e.image}
+            status={e.status}
+          />
+        ))
+      )}
     </Container>
   );
 };

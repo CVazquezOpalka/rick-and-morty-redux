@@ -1,6 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Home, Character, Login, Search, MyList } from "../pages/index";
+import {
+  Home,
+  Character,
+  Login,
+  Search,
+  MyList,
+  ErrorPage,
+} from "../pages/index";
 import { Navbar } from "../components/index";
 
 const MyRoutes = () => {
@@ -13,6 +20,7 @@ const MyRoutes = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search />} />
         <Route path="/favorite" element={<MyList />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </Router>
   );
