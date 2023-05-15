@@ -39,7 +39,7 @@ export const Character = () => {
 
 const Container = styled.div`
   width: 90vw;
-  height: 500px;
+  height: 480px;
   display: flex;
   align-items: center;
   justify-content: space-around;

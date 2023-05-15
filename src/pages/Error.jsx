@@ -37,9 +37,9 @@ const Container = styled.div`
   }
   button {
     position: absolute;
-    bottom: 4.75%;
-    left: 44.25%;
-    padding: 10px 15px;
+    bottom: 3.75%;
+    left: 42.5%;
+    padding: 15px 50px;
     border-radius: 50px;
     border: 1px solid rgb(32, 233, 5);
     background: #000;

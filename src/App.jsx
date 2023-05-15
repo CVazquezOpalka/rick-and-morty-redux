@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import MyRoutes from "./routers/routes";
+import { LoginAccount } from "./components";
 
 function App() {
+  const [isLogin, setIsLogin] = useState(false);
   return (
-    <>
-      <MyRoutes />
-    </>
+    <>{!isLogin ? <LoginAccount setIsLogin={setIsLogin} /> : <MyRoutes />}</>
   );
 }
 
