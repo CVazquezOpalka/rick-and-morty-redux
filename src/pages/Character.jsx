@@ -13,6 +13,7 @@ export const Character = () => {
   useEffect(() => {
     dispatch(getCharacter(id));
   }, []);
+  console.log(state)
   return (
     <>
      {loading ? (

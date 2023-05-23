@@ -5,8 +5,7 @@ import { connect, useSelector } from "react-redux";
 import { getCharacters } from "../redux/actions";
 import { Loading } from "./Loading";
 
-const CardContext = ({ character }) => {
-  const loading = useSelector((state) => state.loading);
+const CardContext = ({ character, loading }) => {
   useEffect(() => {
     getCharacters();
   }, []);
@@ -37,6 +36,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
+    loading: state.isLoading,
     character: state.allCharacters,
   };
 };

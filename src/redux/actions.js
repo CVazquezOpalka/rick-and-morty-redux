@@ -2,9 +2,10 @@ export const GET_CHARACTERS = "GET_CHARACTERS";
 export const GET_CHARACTER = "GET_CHARACTER";
 export const GET_PAGE = "GET_PAGE";
 
+
 export const getCharacters = () => {
   return function (dispatch) {
-    return fetch("https://rickandmortyapi.com/api/character")
+    return fetch("http://localhost:3000/characters")
       .then((response) => response.json())
       .then((json) =>
         dispatch({
@@ -17,7 +18,7 @@ export const getCharacters = () => {
 
 export const getCharacter = (id) => {
   return function (dispatch) {
-    return fetch(`https://rickandmortyapi.com/api/character/${id}`)
+    return fetch(`http://localhost:3000/characters/${id}`)
       .then((response) => response.json())
       .then((json) =>
         dispatch({

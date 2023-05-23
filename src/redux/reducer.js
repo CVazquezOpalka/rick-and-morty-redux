@@ -6,6 +6,7 @@ const initialState = {
   onNextPage: "",
   onPreviousPage: "",
   isLoading: true,
+  login: false,
   page: 1,
   character: {},
 };
@@ -15,13 +16,13 @@ const rootReducer = (state = initialState, action) => {
     case GET_CHARACTERS:
       return {
         ...state,
-        allCharacters: action.payload.results,
+        allCharacters: action.payload,
         isLoading: false,
       };
     case GET_CHARACTER:
       return {
         ...state,
-        character: action.payload,
+        character: action.payload.result,
         isLoading: false,
       };
     case GET_PAGE:

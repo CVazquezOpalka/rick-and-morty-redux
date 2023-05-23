@@ -13,8 +13,8 @@ export const Loading = () => {
 };
 
 const Container = styled.div`
-  width: 70vw;
-  height: 70vh;
+  width: 100vw;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
